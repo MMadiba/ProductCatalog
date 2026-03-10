@@ -50,14 +50,6 @@
 
 - **`Product`** implements **`IComparable<Product>`** (compare by `Name` case-insensitive). Used when ordering product lists (e.g. after search).
 
-### Manual model binding
-
-- **GET /api/products/manual-binding** uses a custom **`ProductQueryBinding`** type with `[FromQuery]` (Page, PageSize, CategoryId, Search). The action delegates to the same logic as the main list endpoint to demonstrate manual binding.
-
-### Custom JSON shape
-
-- **GET /api/products/{id}/export** returns a **`ProductExportShape`** record (Id, Name, SKU, Price, Quantity, CreatedAt) as a dedicated export shape instead of the full DTO.
-
 ### DI and ProductSearchEngine
 
 - **ProductSearchEngine** is registered in **DI** with a preconfigured dictionary of field selectors and weights for `Product`. It is injected into `ProductsController`; the controller calls `SetSource(allProducts)` before search and uses the engine for weighted, fuzzy search when a search term is provided.
@@ -84,4 +76,5 @@
 
 1. From repo root: `dotnet build` then run `ProductCatalog.Api`.
 2. In `frontend/product-catalog-ui`: `npm install` and `npm start`.
+
 3. Open the Angular app and ensure `apiUrl` in the environment points to the running API (e.g. https://localhost:7157/api).
