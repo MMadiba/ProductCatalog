@@ -1,0 +1,72 @@
+<div class="toolbar">
+  <div class="search-bar">
+    <input
+      type="text"
+      [ngModel]="searchTerm()"
+      (ngModelChange)="onSearchChange($event)"
+      placeholder="Search by name..."
+      (keyup.enter)="onSearch()"
+    />
+    <button type="button" (click)="onSearch()">Search</button>
+  </div>
+  <div class="category-filter">
+    <label>Category:</label>
+    <select
+      [ngModel]="categoryId()"
+      (ngModelChange)="categoryId.set($event === '' ? null : +$event); onCategoryChange()"
+    >
+      <option value="">All</option>
+      @for (c of categories(); track c.id) {
+        <option [value]="c.id">{{ c.name }}</option>
+      }
+    </select>
+  </div>
+  <a routerLink="/products/new" class="btn primary">Add Product</a>
+</div>
+
+@if (error()) {
+  <p class="error">{{ error() }}</p>
+}
+
+@if (loading()) {
+  <p class="loading">Loading...</p>
+} @else {
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>SKU</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Category</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (p of products(); track p.id) {
+        <tr>
+          <td>{{ p.name }}</td>
+          <td>{{ p.sku }}</td>
+          <td>{{ p.price | currency }}</td>
+          <td>{{ p.quantity }}</td>
+          <td>{{ getCategoryName(p.categoryId) }}</td>
+          <td>
+            <a [routerLink]="['/products/edit', p.id]">Edit</a>
+            <button type="button" (click)="confirmDelete(p)" class="link-btn">Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  @if (products().length === 0 && !loading()) {
+    <p>No products found.</p>
+  }
+
+  @if (totalPages() > 1) {
+    <div class="pagination">
+      <button type="button" (click)="goToPage(page() - 1)" [disabled]="page() <= 1">Prev</button>
+      <span>Page {{ page() }} of {{ totalPages() }}</span>
+      <button type="button" (click)="goToPage(page() + 1)" [disabled]="page() >= totalPages()">Next</button>
+    </div>
+  }
+}

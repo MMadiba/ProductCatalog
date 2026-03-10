@@ -1,0 +1,15 @@
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\bin\Debug\net9.0\ProductCatalog.Infrastructure.deps.json
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\bin\Debug\net9.0\ProductCatalog.Infrastructure.dll
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\bin\Debug\net9.0\ProductCatalog.Infrastructure.pdb
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\bin\Debug\net9.0\ProductCatalog.Domain.dll
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\bin\Debug\net9.0\ProductCatalog.Domain.pdb
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\obj\Debug\net9.0\ProductCatalog.Infrastructure.csproj.AssemblyReference.cache
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\obj\Debug\net9.0\ProductCatalog.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\obj\Debug\net9.0\ProductCatalog.Infrastructure.AssemblyInfoInputs.cache
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\obj\Debug\net9.0\ProductCatalog.Infrastructure.AssemblyInfo.cs
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\obj\Debug\net9.0\ProductCatalog.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\obj\Debug\net9.0\ProductC.710271C5.Up2Date
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\obj\Debug\net9.0\ProductCatalog.Infrastructure.dll
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\obj\Debug\net9.0\refint\ProductCatalog.Infrastructure.dll
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\obj\Debug\net9.0\ProductCatalog.Infrastructure.pdb
+D:\Source\ProductCatalog\backend\ProductCatalog.Infrastructure\obj\Debug\net9.0\ref\ProductCatalog.Infrastructure.dll

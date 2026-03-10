@@ -1,0 +1,43 @@
+<h2>Category management</h2>
+
+@if (error()) {
+  <p class="error">{{ error() }}</p>
+}
+@if (success()) {
+  <p class="success">{{ success() }}</p>
+}
+
+<h3>Add category</h3>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="field">
+    <label for="name">Name *</label>
+    <input id="name" formControlName="name" type="text" />
+    @if (form.get('name')?.invalid && form.get('name')?.touched) {
+      <span class="validation">Name is required.</span>
+    }
+  </div>
+  <div class="field">
+    <label for="description">Description</label>
+    <input id="description" formControlName="description" type="text" />
+  </div>
+  <div class="field">
+    <label for="parentCategoryId">Parent</label>
+    <select id="parentCategoryId" formControlName="parentCategoryId">
+      <option [ngValue]="null">None (root)</option>
+      @for (item of flatNodes(tree()); track item.node.id) {
+        <option [ngValue]="item.node.id">{{ '\u00A0'.repeat(item.level * 2) }}{{ item.node.name }}</option>
+      }
+    </select>
+  </div>
+  <button type="submit" [disabled]="loading()">Create category</button>
+</form>
+
+<h3>Category tree</h3>
+<ul class="tree">
+  @for (item of flatNodes(tree()); track item.node.id) {
+    <li [style.padding-left.rem]="item.level + 1">{{ item.node.name }}</li>
+  }
+</ul>
+@if (tree().length === 0 && !error()) {
+  <p>No categories yet.</p>
+}

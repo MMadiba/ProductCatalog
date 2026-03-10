@@ -1,0 +1,13 @@
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.search-bar input { margin-right: 0.5rem; padding: 0.35rem 0.5rem; }
+.category-filter label { margin-right: 0.5rem; }
+.category-filter select { padding: 0.35rem 0.5rem; }
+.btn.primary { padding: 0.35rem 0.75rem; background: #1976d2; color: #fff; text-decoration: none; border-radius: 4px; }
+.error { color: #c62828; }
+.loading { color: #666; }
+.product-table { width: 100%; border-collapse: collapse; }
+.product-table th, .product-table td { border: 1px solid #ddd; padding: 0.5rem; text-align: left; }
+.product-table th { background: #f5f5f5; }
+.link-btn { background: none; border: none; color: #1976d2; cursor: pointer; text-decoration: underline; padding: 0; margin-left: 0.5rem; }
+.pagination { margin-top: 1rem; display: flex; align-items: center; gap: 1rem; }
+
